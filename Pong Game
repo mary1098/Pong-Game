@@ -83,21 +83,23 @@ while True:
         center.sety(-290)
         center.dy *=-1
     #right wall
-    if center.xcor()> 360:
-        center.setx(360)
-        center.dx *=-1
-        a+=1
-        pen.clear()
-        pen.write("Player A: {}    Player B: {}".format(a,b), align="center", font=("Arial", 24))
-    #left wall
-    if center.xcor() < -360:
-        center.setx(-360)
-        center.dx *=-1
-        b+=1
-        pen.clear()
-        pen.write("Player A: {}    Player B: {}".format(a, b), align="center", font=("Arial", 24))
-    #collide with paddle
-    if center.xcor() > 360 and Right_paddle.ycor()-50<center.ycor()<Right_paddle.ycor()+50:
+    if center.xcor() > 390:
+        center.setx(390)
         center.dx *= -1
-    if center.ycor() > 360 and left_paddle.ycor()-50<center.ycor()<left_paddle.ycor()+50:
+        a += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(a, b), align="center", font=("Ariel", 24, "normal"))
+    #left wall
+    if center.xcor() < -390:
+        center.setx(-390)
+        center.dx *= -1
+        b += 1
+        pen.clear()
+        pen.write("Player A: {} Player B: {}".format(a, b), align="center", font=("Ariel", 24, "normal"))
+    #collide with paddle
+    if center.xcor() > 370 and Right_paddle.ycor() - 50 < center.ycor() < Right_paddle.ycor() + 50:
+        center.setx(360)
+        center.dx *= -1
+    if center.xcor() < -370 and left_paddle.ycor() - 50 < center.ycor() < left_paddle.ycor() + 50:
+        center.setx(-360)
         center.dx *= -1
